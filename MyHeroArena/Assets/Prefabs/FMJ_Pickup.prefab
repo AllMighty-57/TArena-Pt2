@@ -240,6 +240,8 @@ GameObject:
   - component: {fileID: 929712818148525658}
   - component: {fileID: 3885014649617086759}
   - component: {fileID: 5605186024579759368}
+  - component: {fileID: 8332124743575878135}
+  - component: {fileID: 7762749078277669181}
   m_Layer: 0
   m_Name: FMJ_Pickup
   m_TagString: Untagged
@@ -256,7 +258,7 @@ Transform:
   m_GameObject: {fileID: 5100911748968183449}
   serializedVersion: 2
   m_LocalRotation: {x: -0.18368231, y: -0, z: -0, w: 0.9829857}
-  m_LocalPosition: {x: -10.51, y: 1.2747384, z: 10.658327}
+  m_LocalPosition: {x: -10.51, y: 1.573, z: 10.658327}
   m_LocalScale: {x: 0.65, y: 0.7441113, z: 0.65}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -345,6 +347,41 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &8332124743575878135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100911748968183449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6b857883de156498bd2cc5acbd19c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemRotation
+  RotationSpeed: 100
+--- !u!95 &7762749078277669181
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100911748968183449}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fbdf1412fc7fa2841919440c0b82b8ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6741637717815512966
 GameObject:
   m_ObjectHideFlags: 0

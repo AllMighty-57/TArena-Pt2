@@ -126,6 +126,8 @@ GameObject:
   - component: {fileID: 2506377425682763499}
   - component: {fileID: 3297676830992746299}
   - component: {fileID: 9112211090047622342}
+  - component: {fileID: 7486098430889124220}
+  - component: {fileID: 2777208147059991986}
   m_Layer: 0
   m_Name: Energy_Can
   m_TagString: Untagged
@@ -141,8 +143,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085540409732420476}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2465569, y: -0, z: -0, w: 0.9691283}
-  m_LocalPosition: {x: 10.47, y: 1.4931316, z: -10.801618}
+  m_LocalRotation: {x: 0.17433129, y: -0, z: -0, w: 0.9846871}
+  m_LocalPosition: {x: 10.47, y: 1.4770558, z: -10.84271}
   m_LocalScale: {x: 0.59341, y: 0.4596147, z: 0.59341}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -150,7 +152,7 @@ Transform:
   - {fileID: 6587082431816672351}
   - {fileID: 835668126470938063}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 28.548, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20.079, y: 0, z: 0}
 --- !u!33 &2506377425682763499
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -231,6 +233,41 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &7486098430889124220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085540409732420476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6b857883de156498bd2cc5acbd19c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemRotation
+  RotationSpeed: 100
+--- !u!95 &2777208147059991986
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085540409732420476}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 28301720d7464c24ab00be2827942bbd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2278800440917698858
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +335,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cce05b8604032a74ba1327da77801438, type: 2}
+  - {fileID: 2100000, guid: a9c5a318882a09f46a1bf685e331e760, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
