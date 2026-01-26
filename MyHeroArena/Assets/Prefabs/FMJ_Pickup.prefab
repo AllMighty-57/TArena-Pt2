@@ -242,6 +242,7 @@ GameObject:
   - component: {fileID: 5605186024579759368}
   - component: {fileID: 8332124743575878135}
   - component: {fileID: 7762749078277669181}
+  - component: {fileID: 8855934050959465413}
   m_Layer: 0
   m_Name: FMJ_Pickup
   m_TagString: Untagged
@@ -382,6 +383,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8855934050959465413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100911748968183449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa5c586cc84c1e439a213b3e2cb6da3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemBehavior
 --- !u!1 &6741637717815512966
 GameObject:
   m_ObjectHideFlags: 0

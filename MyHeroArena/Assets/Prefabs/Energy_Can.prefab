@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 9112211090047622342}
   - component: {fileID: 7486098430889124220}
   - component: {fileID: 2777208147059991986}
+  - component: {fileID: 2584995546518390076}
   m_Layer: 0
   m_Name: Energy_Can
   m_TagString: Untagged
@@ -268,6 +269,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2584995546518390076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085540409732420476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa5c586cc84c1e439a213b3e2cb6da3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemBehavior
 --- !u!1 &2278800440917698858
 GameObject:
   m_ObjectHideFlags: 0
