@@ -16,6 +16,12 @@ public class PlayerBehavior : MonoBehaviour
     public float DistanceToGround = 0.1f;
     public LayerMask GroundLayer;
     private CapsuleCollider _col;
+
+    public GameObject Bullet;
+    public float BulletSpeed = 100f;
+
+    private bool _isShooting;
+
     void Start()
     {
 
@@ -28,7 +34,10 @@ public class PlayerBehavior : MonoBehaviour
         _hInput = Input.GetAxis("Horizontal") * RotateSpeed;
         this.transform.Translate(Vector3.forward * _vInput * Time.deltaTime);
         this.transform.Rotate(Vector3.up * _hInput * Time.deltaTime);
+       
         _isJumping |= Input.GetKeyDown(KeyCode.Space);
+
+        _isShooting |= Input.GetKeyDown(KeyCode.KeypadEnter);
     }
     void FixedUpdate()
     {
@@ -48,6 +57,26 @@ public class PlayerBehavior : MonoBehaviour
                  ForceMode.Impulse);
         }
         _isJumping = false;
+
+
+        if (_isShooting)
+        {
+            
+            Vector3 spawnPos = transform.position +
+                                   transform.forward * 1f;
+            
+            GameObject newBullet = Instantiate(Bullet, spawnPos,
+                                       this.transform.rotation);
+            
+            Rigidbody bulletRB =
+                newBullet.GetComponent<Rigidbody>();
+
+            
+            bulletRB.linearVelocity = this.transform.forward *
+                                          BulletSpeed;
+        }
+        
+        _isShooting = false;
     }
     private bool IsGrounded()
     {
