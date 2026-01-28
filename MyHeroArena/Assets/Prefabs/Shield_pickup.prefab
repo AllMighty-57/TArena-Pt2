@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7842600569652384761}
   - component: {fileID: 1409774700074938636}
   - component: {fileID: 7153407315184312508}
+  - component: {fileID: 3784078826283384656}
   m_Layer: 0
   m_Name: Shield_pickup
   m_TagString: Untagged
@@ -163,6 +164,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfa5c586cc84c1e439a213b3e2cb6da3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemBehavior
+  GameManager: {fileID: 0}
+--- !u!114 &3784078826283384656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010711349929364891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cbf7fe1311bfed49b06c0b10e2eeb4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShieldBehavior
 --- !u!1 &1103442845527763274
 GameObject:
   m_ObjectHideFlags: 0

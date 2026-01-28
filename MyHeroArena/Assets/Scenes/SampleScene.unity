@@ -904,7 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameBehavior
   WinButton: {fileID: 1036792075}
-  MaxItems: 1
+  MaxItems: 4
   HealthText: {fileID: 1787148120}
   ItemText: {fileID: 1582040342}
   ProgressText: {fileID: 1940632402}
