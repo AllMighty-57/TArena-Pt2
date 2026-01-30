@@ -11,6 +11,8 @@ public class GameBehavior : MonoBehaviour
     public TMP_Text HealthText;
     public TMP_Text ItemText;
     public TMP_Text ProgressText;
+    public TMP_Text ShieldText;
+
     // 4
     void Start()
     {
@@ -44,6 +46,18 @@ public class GameBehavior : MonoBehaviour
             }
         }
     }
+
+    private int _shieldCount = 0; 
+
+    public int ShieldCount
+    {
+        get { return _shieldCount; } 
+        set
+        {
+            _shieldCount = value;
+        }
+    }
+
 
     public void RestartScene()
     {
