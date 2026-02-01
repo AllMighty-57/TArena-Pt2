@@ -11,7 +11,8 @@ public class GameBehavior : MonoBehaviour
     public TMP_Text HealthText;
     public TMP_Text ItemText;
     public TMP_Text ProgressText;
-    public TMP_Text ShieldText;
+    public TMP_Text Shield;
+    public TMP_Text CountDownText;
 
     // 4
     void Start()
@@ -42,22 +43,13 @@ public class GameBehavior : MonoBehaviour
             else
             {
                 ProgressText.text = "Item found, only " +
-                    (MaxItems - _itemsCollected) + " more!";
+                    (MaxItems - _itemsCollected) + " more!"; 
+                if
             }
         }
     }
 
-    private int _shieldCount = 0; 
-
-    public int ShieldCount
-    {
-        get { return _shieldCount; } 
-        set
-        {
-            _shieldCount = value;
-        }
-    }
-
+   
 
     public void RestartScene()
     {
