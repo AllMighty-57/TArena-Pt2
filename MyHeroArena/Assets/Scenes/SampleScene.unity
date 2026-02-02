@@ -438,8 +438,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6481dc44cc526a4ab0fb6252e76e725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShieldCount
-  counterText: {fileID: 0}
-  startValue: 5
+  counterText: {fileID: 237648047}
+  startValue: 10
   Shield: {fileID: 1484412585}
 --- !u!1001 &299979785
 PrefabInstance:
@@ -1063,8 +1063,8 @@ MonoBehaviour:
   HealthText: {fileID: 1787148120}
   ItemText: {fileID: 1582040342}
   ProgressText: {fileID: 1940632402}
-  Shield: {fileID: 0}
-  CountDownText: {fileID: 0}
+  Shield: {fileID: 1484412585}
+  CountDownText: {fileID: 237648047}
 --- !u!4 &745037732
 Transform:
   m_ObjectHideFlags: 0

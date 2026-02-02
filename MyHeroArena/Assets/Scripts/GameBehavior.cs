@@ -21,7 +21,24 @@ public class GameBehavior : MonoBehaviour
         HealthText.text += _playerHP;
     }
 
-    
+    private int _shieldCollected = 0;
+    public int specialItem_S
+    {
+        get { return _shieldCollected; }
+        set
+        {
+            _shieldCollected = value;
+            if (specialItem_S == 1)
+            {
+                Shield.gameObject.SetActive(true);
+                CountDownText.gameObject.SetActive(true);
+                Debug.Log("Shield Activated!");
+                specialItem_S --;
+            }
+        }
+
+    }
+
     private int _itemsCollected = 0;
     public int Items
     {
@@ -31,25 +48,24 @@ public class GameBehavior : MonoBehaviour
             _itemsCollected = value;
             // 5
             ItemText.text = "Items: " + Items;
-            // 6
+
             if (_itemsCollected >= MaxItems)
             {
-                ProgressText.text = "You've found all the items!";
+                    ProgressText.text = "You've found all the items!";
 
-                WinButton.gameObject.SetActive(true);
+                    WinButton.gameObject.SetActive(true);
 
-                Time.timeScale = 0f;
+                    Time.timeScale = 0f;
             }
             else
             {
-                ProgressText.text = "Item found, only " +
-                    (MaxItems - _itemsCollected) + " more!"; 
-                if
+                    ProgressText.text = "Item found, only " +
+                        (MaxItems - _itemsCollected) + " more!";
+
             }
         }
     }
 
-   
 
     public void RestartScene()
     {

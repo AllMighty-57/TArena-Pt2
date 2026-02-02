@@ -17,13 +17,12 @@ public class ShieldBehavior : MonoBehaviour
         // 2
         if (collision.gameObject.name == "Player")
         {
+            GameManager.Items += 1;
+            GameManager.specialItem_S += 1;
             // 3
             Destroy(this.transform.gameObject);
             // 4
-            Debug.Log("Item collected!\nShield Activated!");
-            
-            GameManager.Items += 1;
-            GameManager.SpecialItem_S += 1;
+            Debug.Log("Shield Activated!");
         }
     }
     
