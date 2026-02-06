@@ -6,7 +6,9 @@ using UnityEngine.AI;
 public class EnemyBehavior : MonoBehaviour
 {
     public Transform PatrolRoute;
-     
+
+    public Transform Player;
+
     public List<Transform> Locations;
 
     private int _locationIndex = 0;
@@ -15,6 +17,9 @@ public class EnemyBehavior : MonoBehaviour
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
+
+        Player = GameObject.Find("Player").transform;
+
         InitializePatrolRoute();
 
         MoveToNextPatrolLocation();
@@ -28,6 +33,23 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
+    private int _lives = 3;
+    public int EnemyLives
+    {
+        // 2 
+        get { return _lives; }
+        // 3 
+        private set
+        {
+            _lives = value;
+            // 4 
+            if (_lives <= 0)
+            {
+                Destroy(this.gameObject);
+                Debug.Log("Enemy down.");
+            }
+        }
+    }
 
     void InitializePatrolRoute()
     {
@@ -53,11 +75,22 @@ public class EnemyBehavior : MonoBehaviour
     {        
         if (other.name == "Player")
         {
+            _agent.destination = Player.position;
+
             Debug.Log("Player detected - attack!");
         }
     }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Bullet(Clone)")
+        {
+            // 6 
+            EnemyLives -= 1;
+            Debug.Log("Critical hit!");
+        }
+    }
 
-    
+
     void OnTriggerExit(Collider other)
     {        
         if (other.name == "Player")
