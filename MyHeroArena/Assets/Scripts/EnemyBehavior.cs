@@ -71,7 +71,7 @@ public class EnemyBehavior : MonoBehaviour
     }
 
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {        
         if (other.name == "Player")
         {
