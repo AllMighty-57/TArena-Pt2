@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 public class PlayerBehavior : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PlayerBehavior : MonoBehaviour
     public float RotateSpeed = 75f;
     private float _vInput;
     private float _hInput;
+
+    public TMP_Text Shield;
 
     private Rigidbody _rb;
 
@@ -40,7 +43,7 @@ public class PlayerBehavior : MonoBehaviour
         this.transform.Rotate(Vector3.up * _hInput * Time.deltaTime);
        
         _isJumping |= Input.GetKeyDown(KeyCode.Space);
-        _isShooting |= Input.GetKeyDown(KeyCode.KeypadEnter);
+        _isShooting |= Input.GetKeyDown(KeyCode.Return);
 
 
     }
@@ -103,8 +106,15 @@ public class PlayerBehavior : MonoBehaviour
         // 4 
         if (collision.gameObject.name == "Enemy")
         {
-            // 5 
-            _gameManager.HP -= 1;
+            if (Shield.gameObject.activeSelf)
+            {
+                Debug.Log("Damage Blocked!");
+            }
+            else
+            {
+               _gameManager.HP -= 1;
+            }
+ 
         }
     }
 
