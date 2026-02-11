@@ -33,7 +33,7 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    private int _lives = 3;
+    private int _lives = 4;
     public int EnemyLives
     {
         // 2 
@@ -87,6 +87,11 @@ public class EnemyBehavior : MonoBehaviour
             // 6 
             EnemyLives -= 1;
             Debug.Log("Critical hit!");
+        }
+        else if (collision.gameObject.name == "Slug(Clone)")
+        {
+            EnemyLives -= 3;
+            Debug.Log("Hole in him!");
         }
     }
 

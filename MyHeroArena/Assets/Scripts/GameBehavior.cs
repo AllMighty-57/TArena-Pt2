@@ -11,8 +11,11 @@ public class GameBehavior : MonoBehaviour
     public TMP_Text HealthText;
     public TMP_Text ItemText;
     public TMP_Text ProgressText;
-    public TMP_Text Shield;
-    public TMP_Text CountDownText;
+    public TMP_Text Shield; 
+    public TMP_Text Count_S; 
+   
+    public TMP_Text Damage; 
+    public TMP_Text Count_D;
 
     // 4
     void Start()
@@ -37,9 +40,27 @@ public class GameBehavior : MonoBehaviour
             if (specialItem_S == 1)
             {
                 Shield.gameObject.SetActive(true);
-                CountDownText.gameObject.SetActive(true);
+                Count_S.gameObject.SetActive(true);
                 Debug.Log("Shield Activated!");
                 specialItem_S --;
+            }
+        }
+
+    }
+
+    private int _shellCollected = 0;
+    public int specialItem_D
+    {
+        get { return _shellCollected; }
+        set
+        {
+            _shellCollected = value;
+            if (specialItem_D == 1)
+            {
+                Damage.gameObject.SetActive(true);
+                Count_D.gameObject.SetActive(true);
+                Debug.Log("Damage up!");
+                specialItem_D--;
             }
         }
 
