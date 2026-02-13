@@ -11,7 +11,6 @@ public class PlayerBehavior : MonoBehaviour
     private float _hInput;
 
     public TMP_Text Shield;
-    public TMP_Text Damage;
 
     private Rigidbody _rb;
 
@@ -22,7 +21,6 @@ public class PlayerBehavior : MonoBehaviour
     private CapsuleCollider _col;
 
     public GameObject Bullet;
-    public GameObject Slug;
     public float BulletSpeed = 100f;
     private bool _isShooting;
 
@@ -70,38 +68,17 @@ public class PlayerBehavior : MonoBehaviour
 
         if (_isShooting)
         {
-            // 5
-            if (Damage.gameObject.activeSelf)
-            {
-                Vector3 spawnPos = transform.position +
-                                   transform.forward * 1f;
+            
+           Vector3 spawnPos = transform.position + transform.forward * 1f;
 
-                GameObject newSlug = Instantiate(Slug, spawnPos,
-                                       this.transform.rotation);
+           GameObject newBullet = Instantiate(Bullet, spawnPos, this.transform.rotation);
                 // 7
-                Rigidbody slugRB =
-                    newSlug.GetComponent<Rigidbody>();
+           Rigidbody bulletRB = newBullet.GetComponent<Rigidbody>();
 
                 // 8
-                slugRB.linearVelocity = this.transform.forward *
-                                              BulletSpeed;
-            }
-            else
-            {
-                Vector3 spawnPos = transform.position +
-                                   transform.forward * 1f;
-
-                GameObject newBullet = Instantiate(Bullet, spawnPos,
-                                       this.transform.rotation);
-                // 7
-                Rigidbody bulletRB =
-                    newBullet.GetComponent<Rigidbody>();
-
-                // 8
-                bulletRB.linearVelocity = this.transform.forward *
-                                              BulletSpeed;
-            }
-         }
+           bulletRB.linearVelocity = this.transform.forward * BulletSpeed;
+ 
+        }
         // 9
         _isShooting = false;
 

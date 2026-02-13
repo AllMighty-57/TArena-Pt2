@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.AI;
 
 public class EnemyBehavior : MonoBehaviour
@@ -8,6 +9,8 @@ public class EnemyBehavior : MonoBehaviour
     public Transform PatrolRoute;
 
     public Transform Player;
+
+    public TMP_Text Damage;
 
     public List<Transform> Locations;
 
@@ -84,14 +87,16 @@ public class EnemyBehavior : MonoBehaviour
     {
         if (collision.gameObject.name == "Bullet(Clone)")
         {
-            // 6 
-            EnemyLives -= 1;
-            Debug.Log("Critical hit!");
-        }
-        else if (collision.gameObject.name == "Slug(Clone)")
-        {
-            EnemyLives -= 3;
-            Debug.Log("Hole in him!");
+            if (Damage.gameObject.activeSelf)
+            {
+                EnemyLives -= 3;
+                Debug.Log("Critical hit!");
+            }
+            else
+            {
+                EnemyLives -= 1;
+                Debug.Log("Critical hit!");
+            }
         }
     }
 
