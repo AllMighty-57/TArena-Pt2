@@ -36,7 +36,7 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    private int _lives = 4;
+    private int _lives = 3;
     public int EnemyLives
     {
         // 2 
