@@ -153,4 +153,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cec13aab701299649b193324b23af5ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletBehavior
-  OnscreenDelay: 3
+  OnscreenDelay: 2

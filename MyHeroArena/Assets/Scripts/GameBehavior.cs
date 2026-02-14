@@ -13,8 +13,11 @@ public class GameBehavior : MonoBehaviour, IManager
     public TMP_Text ItemText;
     public TMP_Text ProgressText;
     public TMP_Text Shield; 
-    public TMP_Text Count_S; 
-   
+    public TMP_Text Count_S;
+
+    public TMP_Text Speed;
+    public TMP_Text Count_SP;
+
     public TMP_Text Damage; 
     public TMP_Text Count_D;
 
@@ -45,6 +48,24 @@ public class GameBehavior : MonoBehaviour, IManager
     {
         ProgressText.text = updatedText;
         Time.timeScale = 0f;
+    }
+
+    private int _cansCollected = 0;
+    public int specialItem_SP
+    {
+        get { return _cansCollected; }
+        set
+        {
+            _cansCollected = value;
+            if (specialItem_SP == 1)
+            {
+                Speed.gameObject.SetActive(true);
+                Count_SP.gameObject.SetActive(true);
+                Debug.Log("Shield Activated!");
+                specialItem_SP--;
+            }
+        }
+
     }
 
     private int _shieldCollected = 0;
@@ -116,7 +137,6 @@ public class GameBehavior : MonoBehaviour, IManager
     }
 
     private int _playerHP = 10;
-
     public int HP
     {
         get { return _playerHP; }

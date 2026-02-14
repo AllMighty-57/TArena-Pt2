@@ -12,6 +12,8 @@ public class PlayerBehavior : MonoBehaviour
 
     public TMP_Text Shield;
 
+    public TMP_Text Speed;
+
     private Rigidbody _rb;
 
     public float JumpVelocity = 5f;
@@ -36,14 +38,23 @@ public class PlayerBehavior : MonoBehaviour
             .GetComponent<GameBehavior>();
     }
     void Update()
-    {
-        _vInput = Input.GetAxis("Vertical") * MoveSpeed;
+    { 
+        if (Speed.gameObject.activeSelf)
+        {
+            MoveSpeed = 18f; 
+        }
+        else
+        {
+            MoveSpeed = 10f;
+        }
+            _vInput = Input.GetAxis("Vertical") * MoveSpeed;
         _hInput = Input.GetAxis("Horizontal") * RotateSpeed;
         this.transform.Translate(Vector3.forward * _vInput * Time.deltaTime);
         this.transform.Rotate(Vector3.up * _hInput * Time.deltaTime);
        
         _isJumping |= Input.GetKeyDown(KeyCode.Space);
-        _isShooting |= Input.GetKeyDown(KeyCode.Return);
+        _isShooting |= Input.GetKeyDown(KeyCode.Return); 
+
 
 
     }
