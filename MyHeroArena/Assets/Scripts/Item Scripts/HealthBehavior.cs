@@ -17,7 +17,6 @@ public class HealthBehavior : MonoBehaviour
         // 2
         if (collision.gameObject.name == "Player")
         {
-            GameManager.Items += 1;
             GameManager.HP += 5;
             // 3
             Destroy(this.transform.gameObject);

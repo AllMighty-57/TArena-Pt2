@@ -17,7 +17,6 @@ public class SpeedBehavior : MonoBehaviour
         // 2
         if (collision.gameObject.name == "Player")
         {
-            GameManager.Items += 1;
             GameManager.specialItem_SP += 1;
             // 3
             Destroy(this.transform.gameObject);

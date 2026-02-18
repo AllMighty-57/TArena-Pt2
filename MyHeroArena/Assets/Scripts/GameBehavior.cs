@@ -119,11 +119,11 @@ public class GameBehavior : MonoBehaviour, IManager
             if (_itemsCollected >= MaxItems)
             { 
                 WinButton.gameObject.SetActive(true);
-                UpdateScene("You've found all the items!");
+                UpdateScene("You've got all the coins!");
             }
             else
             {
-                    ProgressText.text = "Item found, only " +
+                    ProgressText.text = "Coin found, only " +
                         (MaxItems - _itemsCollected) + " more!";
 
             }
@@ -147,7 +147,7 @@ public class GameBehavior : MonoBehaviour, IManager
             if (_playerHP <= 0)
             {
                 LossButton.gameObject.SetActive(true);
-                UpdateScene("You want another life with that?");
+                UpdateScene("Wanna run that back?");
             }
             else
             {
