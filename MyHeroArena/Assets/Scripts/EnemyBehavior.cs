@@ -73,14 +73,21 @@ public class EnemyBehavior : MonoBehaviour
         _locationIndex = (_locationIndex + 1) % Locations.Count;
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Player")
+        {
+            _agent.destination = Player.position;
 
+            Debug.Log("Player detected - attack!");
+        }
+    }
     void OnTriggerStay(Collider other)
     {        
         if (other.name == "Player")
         {
             _agent.destination = Player.position;
 
-            Debug.Log("Player detected - attack!");
         }
     }
     void OnCollisionEnter(Collision collision)

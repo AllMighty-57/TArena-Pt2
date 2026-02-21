@@ -3,12 +3,16 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using CustomExtensions;
+using System.Collections.Generic;
+using System.Linq;
+
+
 
 public class GameBehavior : MonoBehaviour, IManager
 {
     public Button WinButton;
     public int MaxItems = 4;
-    // 3
+    public Stack<Loot> LootStack = new Stack<Loot>();
     public TMP_Text HealthText;
     public TMP_Text ItemText;
     public TMP_Text ProgressText;
@@ -42,6 +46,13 @@ public class GameBehavior : MonoBehaviour, IManager
         _state = "Game Manager initialized.."; 
         _state.FancyDebug();
         Debug.Log(_state);
+        LootStack.Push(new Loot("Sword of Doom", 5));
+        LootStack.Push(new Loot("HP Boost", 1));
+        LootStack.Push(new Loot("Golden Key", 3));
+        LootStack.Push(new Loot("Pair of Winged Boots", 2));
+        LootStack.Push(new Loot("Mythril Bracer", 4));
+
+        FilterLoot();
     }
 
     public void UpdateScene(string updatedText)
@@ -155,6 +166,35 @@ public class GameBehavior : MonoBehaviour, IManager
             }
             Debug.LogFormat("Lives: {0}", _playerHP);
         }
+    }
+
+    public void PrintLootReport()
+    {
+        var currentItem = LootStack.Pop();
+        
+        var nextItem = LootStack.Peek();
+
+        Debug.LogFormat("You got a {0}! Youve got a good chance of finding a {1} next!", currentItem.Name, nextItem.Name);
+
+        Debug.LogFormat("There are {0} random loot items waiting for you!", LootStack.Count);
+    }
+
+    public void FilterLoot()
+    {
+        var rareLoot = from item in LootStack
+                       where item.Rarity >= 3
+                       orderby item.Rarity
+                       select item;
+
+        foreach (var item in rareLoot)
+        {
+            Debug.LogFormat("Rare item: {0}!", item.Name);
+        }
+    }
+
+    public bool LootPredicate(Loot loot)
+    {
+        return loot.Rarity >= 3;
     }
 
 }

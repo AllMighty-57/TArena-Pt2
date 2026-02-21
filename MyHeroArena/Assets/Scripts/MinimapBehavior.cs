@@ -10,7 +10,8 @@ public class MinimapBehavior : MonoBehaviour
     {
         Vector3 newPosition = player.position; 
         newPosition.y = transform.position.y;
-        transform.position = newPosition; 
+        transform.position = newPosition;
 
+        transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
     }
 }
