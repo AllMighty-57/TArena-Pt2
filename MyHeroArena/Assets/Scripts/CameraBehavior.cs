@@ -3,21 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 public class CameraBehavior : MonoBehaviour
 {
-    // 1
-    public Vector3 CamOffset = new Vector3(0f, 1.2f, -2.6f);
-    // 2
-    private Transform _target;
+   
+    // Adjust sensitivity in the Inspector
+    public float mouseSensitivity = 100f;
+
+    public Transform Player; // Reference to the parent Player object
+
+    private float xRotation = 0f;
+
     void Start()
     {
-        // 3
-        _target = GameObject.Find("Player").transform;
+        // Lock the cursor to the center of the screen and hide it
+        Cursor.lockState = CursorLockMode.Locked;
     }
-    // 4
-    void LateUpdate()
+
+    void Update()
     {
-        // 5
-        this.transform.position = _target.TransformPoint(CamOffset);
-        // 6
-        this.transform.LookAt(_target);
+        // Get mouse input and multiply by sensitivity
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+        // Vertical rotation (looking up and down)
+        xRotation -= mouseY;
+        // Clamp the vertical rotation to prevent flipping over (e.g., -90 to 90 degrees)
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        // Apply vertical rotation to the camera itself
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
+        // Horizontal rotation (looking left and right)
+        // Apply horizontal rotation to the entire player body
+        Player.Rotate(Vector3.up * mouseX);
     }
 }

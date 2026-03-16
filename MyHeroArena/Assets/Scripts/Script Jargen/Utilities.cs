@@ -21,7 +21,7 @@ public static class Utilities
     // 4 
     public static void RestartLevel()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1.0f;
     }
     public static bool RestartLevel(int sceneIndex)

@@ -47,13 +47,18 @@ public class PlayerBehavior : MonoBehaviour
         {
             MoveSpeed = 10f;
         }
-            _vInput = Input.GetAxis("Vertical") * MoveSpeed;
+        _vInput = Input.GetAxis("Vertical") * MoveSpeed;
         _hInput = Input.GetAxis("Horizontal") * RotateSpeed;
         this.transform.Translate(Vector3.forward * _vInput * Time.deltaTime);
         this.transform.Rotate(Vector3.up * _hInput * Time.deltaTime);
        
         _isJumping |= Input.GetKeyDown(KeyCode.Space);
-        _isShooting |= Input.GetKeyDown(KeyCode.Return); 
+        _isShooting |= Input.GetKeyDown(KeyCode.Return);  
+
+        if (_rb.position.y < -4)
+        {
+            Utilities.RestartLevel();
+        }
 
 
 
