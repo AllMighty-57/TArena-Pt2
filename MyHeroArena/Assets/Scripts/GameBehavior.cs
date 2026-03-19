@@ -14,8 +14,9 @@ public class GameBehavior : MonoBehaviour, IManager
     public int MaxItems = 4;
     public Stack<Loot> LootStack = new Stack<Loot>();
     public TMP_Text HealthText;
-    public TMP_Text ItemText;
+    public TMP_Text CoinText;
     public TMP_Text ProgressText;
+
     public TMP_Text Shield; 
     public TMP_Text Count_S;
 
@@ -28,7 +29,7 @@ public class GameBehavior : MonoBehaviour, IManager
     // 4
     void Start()
     {
-        ItemText.text += _itemsCollected;
+        CoinText.text += _itemsCollected;
         HealthText.text += _playerHP;
         Initialize();
     }
@@ -125,7 +126,7 @@ public class GameBehavior : MonoBehaviour, IManager
         {
             _itemsCollected = value;
             // 5
-            ItemText.text = "Items: " + Items;
+            CoinText.text = "" + Items;
 
             if (_itemsCollected >= MaxItems)
             { 
@@ -154,7 +155,7 @@ public class GameBehavior : MonoBehaviour, IManager
         set
         {
             _playerHP = value;
-            HealthText.text = "Health: " + HP;
+            HealthText.text = "" + HP;
             if (_playerHP <= 0)
             {
                 LossButton.gameObject.SetActive(true);
