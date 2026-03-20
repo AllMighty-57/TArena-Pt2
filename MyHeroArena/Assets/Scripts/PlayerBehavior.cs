@@ -26,7 +26,11 @@ public class PlayerBehavior : MonoBehaviour
     public float BulletSpeed = 100f;
     private bool _isShooting;
 
-    private GameBehavior _gameManager;
+    private GameBehavior _gameManager; 
+
+    private HealthAnimation _healthAnimation;
+
+
 
 
     void Start()
@@ -35,7 +39,8 @@ public class PlayerBehavior : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _col = GetComponent<CapsuleCollider>();
         _gameManager = GameObject.Find("Game Manager")
-            .GetComponent<GameBehavior>();
+            .GetComponent<GameBehavior>(); 
+        _healthAnimation = GameObject.Find("HealthCounter").GetComponent<HealthAnimation>();
     }
     void Update()
     { 
@@ -126,6 +131,7 @@ public class PlayerBehavior : MonoBehaviour
             else
             {
                _gameManager.HP -= 1;
+               _healthAnimation.Hurt();
             }
  
         }
