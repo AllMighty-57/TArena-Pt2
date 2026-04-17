@@ -17,6 +17,11 @@ public class EnemyBehavior : MonoBehaviour
     private int _locationIndex = 0;
     
     private NavMeshAgent _agent;
+
+    public AudioClip[] hurtSFX;
+    public AudioClip[] deathSFX; 
+
+
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -92,15 +97,19 @@ public class EnemyBehavior : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
+        var clip = hurtSFX[Random.Range(0,hurtSFX.Length)];
+
         if (collision.gameObject.name == "Bullet(Clone)")
         {
             if (Damage.gameObject.activeSelf)
             {
+                GetComponent<AudioSource>().PlayOneShot(clip);
                 EnemyLives -= 3;
                 Debug.Log("Critical hit!");
             }
             else
             {
+                GetComponent<AudioSource>().PlayOneShot(clip);
                 EnemyLives -= 1;
                 Debug.Log("Critical hit!");
             }
