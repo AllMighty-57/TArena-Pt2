@@ -19,7 +19,7 @@ public class EnemyBehavior : MonoBehaviour
     private NavMeshAgent _agent;
 
     public AudioClip[] hurtSFX;
-    public AudioClip[] deathSFX; 
+     
 
 
     void Start()
@@ -49,11 +49,12 @@ public class EnemyBehavior : MonoBehaviour
         // 3 
         private set
         {
-            _lives = value;
-            // 4 
+            _lives = value; 
+            
+
             if (_lives <= 0)
             {
-                Destroy(this.gameObject);
+                gameObject.SetActive(false);
                 Debug.Log("Enemy down.");
             }
         }

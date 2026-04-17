@@ -122,7 +122,7 @@ public class PlayerBehavior : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // 4 
-        if (collision.gameObject.name == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
             if (Shield.gameObject.activeSelf)
             {

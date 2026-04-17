@@ -25,7 +25,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Jumping
+  m_Name: Player
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 0cdb5289bcfc0564e98e31f230d595cc
   m_Children: []
@@ -48,6 +48,20 @@ AudioMixerEffectController:
   m_EffectID: 346622b0bd6f1df4682eeb32de41c4b0
   m_EffectName: Attenuation
   m_MixLevel: 259118feb079cc542be68a73cbac126e
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &-1820939440334588271
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 7284339f3250d884c9d96f4c2fbe14ec
+  m_EffectName: Attenuation
+  m_MixLevel: 85c9e273c5c3d3b448286999bb6f0375
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
@@ -79,8 +93,8 @@ AudioMixerController:
     - a1cab8595e9aa7941966410f61ce6a33
     - d6726a5bf8272a64b87a10d29847e813
     - a86a1d5c1e1c79f4b9c6fb753e3cedb9
-    - 7e3cabaa78b2f92439faf49d4f1eed4b
     - 0cdb5289bcfc0564e98e31f230d595cc
+    - 63a7e6d83d5a29841ab739d3cad44403
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -154,8 +168,8 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: a86a1d5c1e1c79f4b9c6fb753e3cedb9
   m_Children:
-  - {fileID: 8543892118136358474}
   - {fileID: -7745768420023083142}
+  - {fileID: 7103173268208041715}
   m_Volume: acc4ede9c2947d74bb9ebd63002211a2
   m_Pitch: 83f93b61e67152340b48063d1351b965
   m_Send: 00000000000000000000000000000000
@@ -179,36 +193,22 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
---- !u!243 &8543892118136358474
+--- !u!243 &7103173268208041715
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shooting
+  m_Name: Enemy
   m_AudioMixer: {fileID: 24100000}
-  m_GroupID: 7e3cabaa78b2f92439faf49d4f1eed4b
+  m_GroupID: 63a7e6d83d5a29841ab739d3cad44403
   m_Children: []
-  m_Volume: 6d1240ec1ddbe75488faf46e9f2c0691
-  m_Pitch: 7b8f7d7a8ad23794aa48f5293cd64cfa
+  m_Volume: 7e52ae26382e3104eb4b1c5c101567df
+  m_Pitch: 249166905c149d047880421a192a73ab
   m_Send: 00000000000000000000000000000000
   m_Effects:
-  - {fileID: 8664267991305077235}
+  - {fileID: -1820939440334588271}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
---- !u!244 &8664267991305077235
-AudioMixerEffectController:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_EffectID: 4e393d934ea25914e8d3c10153d0dce8
-  m_EffectName: Attenuation
-  m_MixLevel: 22a716e76f76fa64f82f0194b9c9d1ad
-  m_Parameters: []
-  m_SendTarget: {fileID: 0}
-  m_EnableWetMix: 0
-  m_Bypass: 0
