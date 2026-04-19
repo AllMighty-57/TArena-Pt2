@@ -29,13 +29,17 @@ public class PlayerBehavior : MonoBehaviour
     private GameBehavior _gameManager; 
 
     private HealthAnimation _healthAnimation;
+    public AudioClip shootSFX;
+    public AudioClip jumpSFX;
+    public AudioClip[] hurtSFX;
+    private AudioSource audioSource;
 
 
 
 
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
         _rb = GetComponent<Rigidbody>();
         _col = GetComponent<CapsuleCollider>();
         _gameManager = GameObject.Find("Game Manager")
@@ -84,20 +88,22 @@ public class PlayerBehavior : MonoBehaviour
         {
             _rb.AddForce(Vector3.up * JumpVelocity,
                  ForceMode.Impulse);
+            audioSource.PlayOneShot(jumpSFX);
         }
         _isJumping = false;
 
         if (_isShooting)
         {
-            
-           Vector3 spawnPos = transform.position + transform.forward * 1f;
+            audioSource.PlayOneShot(shootSFX);
+
+            Vector3 spawnPos = transform.position + transform.forward * 1f;
 
            GameObject newBullet = Instantiate(Bullet, spawnPos, this.transform.rotation);
                 // 7
            Rigidbody bulletRB = newBullet.GetComponent<Rigidbody>();
 
                 // 8
-           bulletRB.linearVelocity = this.transform.forward * BulletSpeed;
+           bulletRB.linearVelocity = this.transform.forward * BulletSpeed; 
  
         }
         // 9
@@ -121,7 +127,7 @@ public class PlayerBehavior : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        // 4 
+        var clip = hurtSFX[Random.Range(0, hurtSFX.Length)];
         if (collision.gameObject.tag == "Enemy")
         {
             if (Shield.gameObject.activeSelf)
@@ -130,7 +136,8 @@ public class PlayerBehavior : MonoBehaviour
             }
             else
             {
-               _gameManager.HP -= 1;
+                audioSource.PlayOneShot(clip);
+                _gameManager.HP -= 1;
                _healthAnimation.Hurt();
             }
  

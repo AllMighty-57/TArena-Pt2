@@ -19,7 +19,7 @@ public class ShieldBehavior : MonoBehaviour
         {
             GameManager.specialItem_S += 1;
             // 3
-            Destroy(this.transform.gameObject);
+            gameObject.SetActive(false);
             // 4
             Debug.Log("Shield Activated!");
         }

@@ -21,9 +21,9 @@ public class HealthBehavior : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             GameManager.HP += 5;
-            
+
             // 3
-            Destroy(this.transform.gameObject);
+            gameObject.SetActive(false);
             // 4
             Debug.Log("+ 5 HP");
             _healthAnimation.Heal();

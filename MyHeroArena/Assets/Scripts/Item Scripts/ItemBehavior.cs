@@ -21,7 +21,7 @@ public class ItemBehavior : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             // 3
-            Destroy(this.transform.gameObject);
+            gameObject.SetActive(false);
             // 4
             Debug.Log("Item collected!");
 

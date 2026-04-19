@@ -19,7 +19,7 @@ public class SpeedBehavior : MonoBehaviour
         {
             GameManager.specialItem_SP += 1;
             // 3
-            Destroy(this.transform.gameObject);
+            gameObject.SetActive(false);
             // 4
             Debug.Log("Hyper-ness!!");
         }

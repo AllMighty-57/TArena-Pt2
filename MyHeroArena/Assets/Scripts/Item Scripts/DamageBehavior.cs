@@ -19,7 +19,7 @@ public class DamageBehavior : MonoBehaviour
         {
             GameManager.specialItem_D += 1;
             // 3
-            Destroy(this.transform.gameObject);
+            gameObject.SetActive(false);
             // 4
             Debug.Log("Damage Up!");
         }

@@ -6,6 +6,7 @@ public class Pause : MonoBehaviour
     public static bool GamePaused = false;
     public GameObject pauseMenuUI; 
     public GameObject MainUI;
+    public GameObject audioMenuUI;
 
 
 
@@ -37,5 +38,15 @@ public class Pause : MonoBehaviour
         MainUI.SetActive(false);
         Time.timeScale = 0f;
         GamePaused = true;
+    } 
+    public void OpenAudio()
+    {
+        audioMenuUI.SetActive(true);
+        pauseMenuUI.SetActive(false);
+    } 
+    public void CloseAudio()
+    {
+        audioMenuUI.SetActive(false); 
+        pauseMenuUI.SetActive(true);
     }
 }
