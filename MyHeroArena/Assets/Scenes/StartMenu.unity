@@ -251,7 +251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hero Born
+  m_text: Bang Bang
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 62e79bfe769c5f74395a36dde45f2c9f, type: 2}
   m_sharedMaterial: {fileID: -5219376152393658637, guid: 62e79bfe769c5f74395a36dde45f2c9f, type: 2}
