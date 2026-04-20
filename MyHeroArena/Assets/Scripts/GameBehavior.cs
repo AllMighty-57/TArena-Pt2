@@ -146,6 +146,10 @@ public class GameBehavior : MonoBehaviour, IManager
     public void RestartScene()
     {
         Utilities.RestartLevel(0);
+    } 
+    public void ToMainMenu()
+    {
+        SceneManager.LoadScene("StartMenu");
     }
 
     private int _playerHP = 10;

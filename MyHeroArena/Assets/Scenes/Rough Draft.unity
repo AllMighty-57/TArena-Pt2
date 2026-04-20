@@ -6385,7 +6385,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 745037731}
         m_TargetAssemblyTypeName: GameBehavior, Assembly-CSharp
-        m_MethodName: RestartScene
+        m_MethodName: ToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12974,6 +12974,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 420680419}
     m_Modifications:
+    - target: {fileID: 917346323038325699, guid: 77ab612bc14046a4d8b7ec5232699e40, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1925909871902266316, guid: 77ab612bc14046a4d8b7ec5232699e40, type: 3}
       propertyPath: m_Name
       value: FMJ_Pickup
